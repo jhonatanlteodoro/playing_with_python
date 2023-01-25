@@ -21,3 +21,12 @@ def test_1():
         pass
     # print("--- %s seconds ---" % (time.time() - start_time))
     # print("*"*20)
+
+def test_2():
+    # start_time = time.time()
+    to_batch = [x for x in range(1, 10000, 2)]
+    for x in batched(to_batch, 10):
+        # print(x)
+        pass
+    # print("--- %s seconds ---" % (time.time() - start_time))
+
