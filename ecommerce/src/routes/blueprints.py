@@ -1,15 +1,17 @@
-from flask import Blueprint, render_template
-from flask.views import MethodView
+from flask import Blueprint
+from src.views.product import ProductView
+from src.views.home import HomeView
+
 
 home_bp = Blueprint('home', __name__)
 products_bp = Blueprint('product', __name__)
 
 
-@home_bp.route("/")
-def home():
-    return render_template('home.html')
+@home_bp.route(HomeView.URL, methods=[HomeView.METHOD])
+def home(**kwargs):
+    return HomeView().run(**kwargs)
 
 
-@products_bp.route("/product/<int:product_id>")
-def product_detail(product_id):
-    return render_template('product_detail.html', product_id=product_id)
+@products_bp.route(ProductView.URL, methods=[ProductView.METHOD])
+def product_detail(**kwargs):
+    return ProductView().run(**kwargs)
