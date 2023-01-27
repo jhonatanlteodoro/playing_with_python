@@ -1,14 +1,188 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-    <h1>Imagine this is a home and a it is beautiful!</h1>
-    
-</body>
-</html>
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+    <div class="card">
+        <div class="card-image">
+            <figure class="image is-3by1">
+            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+            </figure>
+        </div>
+        <footer class="card-footer">
+            <p class="card-footer-item">
+                <span>
+                View on <a href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
+                </span>
+            </p>
+            <p class="card-footer-item">
+                <span>
+                Share on <a href="#">Facebook</a>
+                </span>
+            </p>
+        </footer>
+    </div>
+
+
+    <!-- image is-1by1 -->
+    <nav class="level pt-5">
+        <div class="level-item has-text-centered">
+          <div class="card mr-0">
+                <div class="card-image">
+                    <figure class="image is-1by1">
+                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                    </figure>
+                </div>
+                <footer class="card-footer">
+                    <p class="card-footer-item">
+                        <span>
+                        View on <a href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
+                        </span>
+                    </p>
+                    <p class="card-footer-item">
+                        <span>
+                        Share on <a href="#">Facebook</a>
+                        </span>
+                    </p>
+                </footer>
+            </div>
+        </div>
+        <div class="level-item has-text-centered">
+            <div class="card mr-0">
+                  <div class="card-image">
+                      <figure class="image is-1by1">
+                      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                      </figure>
+                  </div>
+                  <footer class="card-footer">
+                      <p class="card-footer-item">
+                          <span>
+                          View on <a href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
+                          </span>
+                      </p>
+                      <p class="card-footer-item">
+                          <span>
+                          Share on <a href="#">Facebook</a>
+                          </span>
+                      </p>
+                  </footer>
+              </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div class="card mr-0">
+                  <div class="card-image">
+                      <figure class="image is-1by1">
+                      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                      </figure>
+                  </div>
+                  <footer class="card-footer">
+                      <p class="card-footer-item">
+                          <span>
+                          View on <a href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
+                          </span>
+                      </p>
+                      <p class="card-footer-item">
+                          <span>
+                          Share on <a href="#">Facebook</a>
+                          </span>
+                      </p>
+                  </footer>
+              </div>
+          </div>
+        <div class="level-item has-text-centered">
+            <div class="card mr-0">
+                <div class="card-image">
+                    <figure class="image is-1by1">
+                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                    </figure>
+                </div>
+                <footer class="card-footer">
+                    <p class="card-footer-item">
+                        <span>
+                        View on <a href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
+                        </span>
+                    </p>
+                    <p class="card-footer-item">
+                        <span>
+                        Share on <a href="#">Facebook</a>
+                        </span>
+                    </p>
+                </footer>
+            </div>
+        </div>
+        <div class="level-item has-text-centered">
+            <div class="card mr-0">
+                <div class="card-image">
+                    <figure class="image is-1by1">
+                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                    </figure>
+                </div>
+                <footer class="card-footer">
+                    <p class="card-footer-item">
+                        <span>
+                        View on <a href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
+                        </span>
+                    </p>
+                    <p class="card-footer-item">
+                        <span>
+                        Share on <a href="#">Facebook</a>
+                        </span>
+                    </p>
+                </footer>
+            </div>
+        </div>
+        <div class="level-item has-text-centered">
+            <div class="card mr-0">
+                <div class="card-image">
+                    <figure class="image is-1by1">
+                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                    </figure>
+                </div>
+                <footer class="card-footer">
+                    <p class="card-footer-item">
+                        <span>
+                        View on <a href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
+                        </span>
+                    </p>
+                    <p class="card-footer-item">
+                        <span>
+                        Share on <a href="#">Facebook</a>
+                        </span>
+                    </p>
+                </footer>
+            </div>
+        </div>
+      </nav>
+
+
+    <div class="card">
+        <div >
+            <p>${ count }$</p>
+
+            <button @click="increment">increment</button>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block js %}
+<script>
+
+    const app = createApp({
+        data() {
+            return {
+                count: 0,
+            }
+        },
+        methods: {
+            
+            increment() {
+                this.count++
+            }
+            
+        }
+    })
+    app.config.compilerOptions.delimiters = DEFAULT_DELIMITERS; 
+    app.mount("#app");
+</script>
+{% endblock %}
