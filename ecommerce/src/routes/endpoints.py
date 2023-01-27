@@ -15,3 +15,9 @@ def home(**kwargs):
 @products_bp.route(ProductView.URL, methods=[ProductView.METHOD])
 def product_detail(**kwargs):
     return ProductView().run(**kwargs)
+
+
+def register_blueprint(app):
+    app.register_blueprint(home_bp)
+    app.register_blueprint(products_bp)
+    return
