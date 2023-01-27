@@ -1,14 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
 
-        <h1>Hello {{ objects.product_id }}!</h1>
+{% block content %}
+
+    <div class="card">
+        <div class="card-image">
+            <figure class="image">
+            <img style="width: 1280 !important; height: 180px !important;" src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+            </figure>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="columns is-centered">
+            <div class="column is-one-third">
+                <div class="card mr-0">
+                    <div class="card-image">
+                        <figure class="image is-1by1">
+                        <img src="https://some-image.png" alt="Placeholder image">
+                        </figure>
+                    </div>
+                    <footer class="card-footer">
+                        <p class="card-footer-item">
+                            <span>
+                            BRAND <a href="https://brand">Brand Products</a>
+                            </span>
+                        </p>
+                    </footer>
+                </div>
+            </div>
     
-</body>
-</html>
+            <div class="column is-two-thirds has-background-primary">
+                <p class="">Product Name</p>
+                <p class="">Value</p>
+                <p class="">quantity</p>
+                <p class="">color</p>
+                <p class="">any other useful info</p>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="card">
+        <div >
+            <p>${ count }$</p>
+
+            <button @click="increment">increment</button>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block js %}
+<script>
+
+    const app = createApp({
+        data() {
+            return {
+                count: 0,
+            }
+        },
+        methods: {
+            
+            increment() {
+                this.count++
+            }
+            
+        }
+    })
+    app.config.compilerOptions.delimiters = DEFAULT_DELIMITERS; 
+    app.mount("#app");
+</script>
+{% endblock %}
